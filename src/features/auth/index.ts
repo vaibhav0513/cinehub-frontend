@@ -1,0 +1,6 @@
+export { AuthModal } from './components/AuthModal'
+export { LoginForm } from './components/LoginForm'
+export { RegisterForm } from './components/RegisterForm'
+export { useAuth } from './hooks/useAuth'
+export { authService } from './services/auth.service'
+export type { LoginPayload, RegisterPayload, AuthResponse } from './services/auth.service'
