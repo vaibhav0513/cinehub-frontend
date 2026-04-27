@@ -5,8 +5,8 @@ import { PrivateRoute, RoleRoute } from './guards'
 
 // ── Lazy pages ──
 const HomePage        = lazy(() => import('@/pages/HomePage'))
-// const MoviesPage      = lazy(() => import('@/pages/MoviesPage'))
-// const MovieDetailPage = lazy(() => import('@/pages/MovieDetailPage'))
+const MoviesPage      = lazy(() => import('@/pages/MoviesPage'))
+const MovieDetailPage = lazy(() => import('@/pages/MovieDetailPage'))
 // const ShowtimesPage   = lazy(() => import('@/pages/ShowtimesPage'))
 // const SeatPickerPage  = lazy(() => import('@/pages/SeatPickerPage'))
 // const CheckoutPage    = lazy(() => import('@/pages/CheckoutPage'))
@@ -56,8 +56,8 @@ export function AppRouter() {
         {/* ── Public pages ── */}
         <Route element={<PageLayout />}>
           <Route path="/"            element={<HomePage />} />
-          {/* <Route path="/movies"      element={<MoviesPage />} /> */}
-          {/* <Route path="/movies/:id"  element={<MovieDetailPage />} /> */}
+          <Route path="/movies"      element={<MoviesPage />} />
+          <Route path="/movies/:id"  element={<MovieDetailPage />} />
           {/* <Route path="/shows/:movieId" element={<ShowtimesPage />} /> */}
           {/* <Route path="/search"      element={<SearchPage />} /> */}
         </Route>

@@ -19,6 +19,10 @@ export function Navbar() {
   const [searchQuery, setSearchQuery] = useState('')
   const [scrolled, setScrolled] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Call them as functions
+const loggedIn = isLoggedIn()
+const admin = isAdmin()
   const navigate = useNavigate()
 
   // Scroll detection for glass effect
@@ -123,7 +127,7 @@ export function Navbar() {
 
           {/* ── Right side ── */}
           <div className="flex items-center gap-2 ml-auto">
-            {isLoggedIn ? (
+            {loggedIn  ? (
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -193,7 +197,7 @@ export function Navbar() {
                         </Link>
                       ))}
 
-                      {isAdmin && (
+                      {admin  && (
                         <Link
                           to="/admin"
                           onClick={() => setDropdownOpen(false)}
