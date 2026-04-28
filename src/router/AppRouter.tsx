@@ -8,15 +8,15 @@ const HomePage        = lazy(() => import('@/pages/HomePage'))
 const MoviesPage      = lazy(() => import('@/pages/MoviesPage'))
 const MovieDetailPage = lazy(() => import('@/pages/MovieDetailPage'))
 // const ShowtimesPage   = lazy(() => import('@/pages/ShowtimesPage'))
-// const SeatPickerPage  = lazy(() => import('@/pages/SeatPickerPage'))
-// const CheckoutPage    = lazy(() => import('@/pages/CheckoutPage'))
+const SeatPickerPage  = lazy(() => import('@/pages/SeatPickerPage'))
+const CheckoutPage    = lazy(() => import('@/pages/CheckoutPage'))
 // const ConfirmPage     = lazy(() => import('@/pages/ConfirmationPage'))
 // const ProfilePage     = lazy(() => import('@/pages/ProfilePage'))
 // const SearchPage      = lazy(() => import('@/pages/SearchPage'))
 // const NotFoundPage    = lazy(() => import('@/pages/NotFoundPage'))
 
 // Admin — separate chunk, never loads for regular users
-// const AdminDashboard  = lazy(() => import('@/features/admin/pages/AdminDashboard'))
+const AdminDashboard  = lazy(() => import('@/features/admin/pages/AdminDashboard'))
 // const AdminMovies     = lazy(() => import('@/features/admin/pages/AdminMovies'))
 // const AdminVenues     = lazy(() => import('@/features/admin/pages/AdminVenues'))
 // const AdminShows      = lazy(() => import('@/features/admin/pages/AdminShows'))
@@ -63,30 +63,30 @@ export function AppRouter() {
         </Route>
 
         {/* ── Protected: booking flow ── */}
-        {/* <Route element={<PrivateRoute />}>
+        <Route element={<PrivateRoute />}>
           <Route element={<BookingLayout />}>
             <Route path="/book/:showId/seats"    element={<SeatPickerPage />} />
             <Route path="/book/:showId/checkout" element={<CheckoutPage />} />
-            <Route path="/booking/:id/confirm"   element={<ConfirmPage />} />
+            {/* <Route path="/booking/:id/confirm"   element={<ConfirmPage />} /> */}
           </Route>
 
           <Route element={<PageLayout />}>
-            <Route path="/profile"          element={<ProfilePage />} />
-            <Route path="/profile/:tab"     element={<ProfilePage />} />
+            {/* <Route path="/profile"          element={<ProfilePage />} /> */}
+            {/* <Route path="/profile/:tab"     element={<ProfilePage />} /> */}
           </Route>
-        </Route> */}
+        </Route>
 
         {/* ── Admin only ── */}
-        {/* <Route element={<RoleRoute role="admin" />}>
+        <Route element={<RoleRoute role="admin" />}>
           <Route element={<AdminLayout />}>
             <Route path="/admin"              element={<AdminDashboard />} />
-            <Route path="/admin/movies"       element={<AdminMovies />} />
-            <Route path="/admin/venues"       element={<AdminVenues />} />
-            <Route path="/admin/shows"        element={<AdminShows />} />
-            <Route path="/admin/bookings"     element={<AdminBookings />} />
-            <Route path="/admin/analytics"    element={<AdminAnalytics />} />
+            {/* <Route path="/admin/movies"       element={<AdminMovies />} /> */}
+            {/* <Route path="/admin/venues"       element={<AdminVenues />} /> */}
+            {/* <Route path="/admin/shows"        element={<AdminShows />} /> */}
+            {/* <Route path="/admin/bookings"     element={<AdminBookings />} /> */}
+            {/* <Route path="/admin/analytics"    element={<AdminAnalytics />} /> */}
           </Route>
-        </Route> */}
+        </Route>
 
         {/* ── 404 ── */}
         {/* <Route path="*" element={<NotFoundPage />} /> */}

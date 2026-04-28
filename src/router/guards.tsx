@@ -1,6 +1,8 @@
 import { Navigate, Outlet } from 'react-router-dom'
-import type  { useAuthStore, UserRole } from '@/store/authStore'
+// import type  { useAuthStore, UserRole } from '@/store/authStore'
 import { useUIStore } from '@/store/uiStore'
+import { useAuthStore } from '@/store/authStore'
+import type { UserRole } from '@/store/authStore'
 
 // ── PrivateRoute: must be logged in ──
 export function PrivateRoute() {
