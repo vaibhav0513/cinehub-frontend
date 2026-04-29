@@ -17,7 +17,7 @@ const CheckoutPage    = lazy(() => import('@/pages/CheckoutPage'))
 
 // Admin — separate chunk, never loads for regular users
 const AdminDashboard  = lazy(() => import('@/features/admin/pages/AdminDashboard'))
-// const AdminMovies     = lazy(() => import('@/features/admin/pages/AdminMovies'))
+const AdminMovies     = lazy(() => import('@/features/admin/pages/AdminMovies'))
 // const AdminVenues     = lazy(() => import('@/features/admin/pages/AdminVenues'))
 // const AdminShows      = lazy(() => import('@/features/admin/pages/AdminShows'))
 // const AdminBookings   = lazy(() => import('@/features/admin/pages/AdminBookings'))
@@ -80,7 +80,7 @@ export function AppRouter() {
         <Route element={<RoleRoute role="admin" />}>
           <Route element={<AdminLayout />}>
             <Route path="/admin"              element={<AdminDashboard />} />
-            {/* <Route path="/admin/movies"       element={<AdminMovies />} /> */}
+            <Route path="/admin/movies"       element={<AdminMovies />} />
             {/* <Route path="/admin/venues"       element={<AdminVenues />} /> */}
             {/* <Route path="/admin/shows"        element={<AdminShows />} /> */}
             {/* <Route path="/admin/bookings"     element={<AdminBookings />} /> */}
